@@ -9,10 +9,7 @@ soup = BeautifulSoup(website_html, "html.parser")
 
 website_titles = soup.find_all(name="h3", class_="title")
 
-movie_titles = []
-
-for movie in website_titles:
-  movie_titles.append(movie.get_text())
+movie_titles = [movie.get_text() for movie in website_titles]
 
 movie_titles.reverse()
 
