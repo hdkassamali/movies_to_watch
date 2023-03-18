@@ -11,8 +11,8 @@ website_titles = soup.find_all(name="h3", class_="title")
 
 movie_titles = [movie.get_text() for movie in website_titles]
 
-movie_titles.reverse()
+new_movie_list = movie_titles[::-1]
 
 with open("movies.txt", mode="w") as file:
-  for movie in movie_titles:
-    file.writelines(f"{movie}\n")
+  for movie in new_movie_list:
+    file.write(f"{movie}\n")
